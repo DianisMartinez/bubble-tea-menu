@@ -45,9 +45,9 @@ export const MENU = [
         ],
       },
       { name: "BLACKBERRY BLISS", desc: "Mora + té blanco + tapioca" },
-      { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de piña o mango" },
+      { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango" },
       { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca" },
-      { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + tapioca" },
+      { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla" },
       { name: "BLACKBERRY BREEZE", desc: "Mora + té blanco + popping de mora" },
     ],
   },
@@ -71,9 +71,13 @@ export const MENU = [
   {
     title: "AGREGA TUS TOPPINGS",
     items: [
-      {
-        name: "POPING DE MANGO",
+      { 
         sizes: [{ price: "500" }],
+       
+      },
+      {
+         name: "POPING DE MANGO",
+       
       },
       {
         name: "POPING DE FRUTILLA",
