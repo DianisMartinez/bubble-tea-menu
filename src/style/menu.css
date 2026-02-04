@@ -162,7 +162,7 @@ color: var(--primary);  text-transform: uppercase;
   width: auto;
   height: auto;
   object-fit: contain;
-  flex-shrink: 1;
+  flex-shrink: 0;
   display: block;
 
   /* 👇 borde superior */
@@ -171,9 +171,33 @@ color: var(--primary);  text-transform: uppercase;
   margin-top: 12px;
 }
 
+/* ===== LOGO GRANDE EN CELULAR ===== */
 @media (max-width: 600px){
-  .brandTitle{ font-size: 28px; }
-  .brandLogoHero{ max-height: 34px; max-width: 320px; }
+  .heroInline{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .brandTitle{
+    font-size: 30px;
+    white-space: normal;
+  }
+
+  .brandLogoHero{
+    max-height: 110px;   /* logo grande */
+    max-width: 92%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    /* en móvil sin borde ni espacios extra */
+    border-top: 0;
+    padding-top: 0;
+    margin-top: 4px;
+  }
 }
 
 /* ===== LISTA + layout de items (TODO CSS) ===== */
