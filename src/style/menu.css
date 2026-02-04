@@ -1,0 +1,404 @@
+.wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.hero{
+  padding: 12px 6px 18px;
+}
+
+.brandTitle{
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: .2px;
+  white-space: nowrap; /* evita salto de línea */
+  line-height: 1;
+  display: inline-block;
+}
+
+.subtitle{
+  margin-top: 8px;
+  color: var(--muted);
+  text-align: center;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoryTitle{
+  margin: 22px 0 10px;
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+
+.itemName{
+  font-weight: 900;
+color: var(--primary);  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.itemDesc{
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.tag{
+  display: inline-flex;
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(131, 211, 215, 0.115);
+}
+
+.tagsRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer{
+  margin-top: 22px;
+  padding: 12px 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.heroBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6px 2px 2px;
+}
+
+/* Botoncitos */
+.ctaRow{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid var(--border);
+}
+
+.cta.primary{
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.cta.ghost{
+  background: transparent;
+  color: var(--secondary);
+}
+
+/* ====== Photo strip (igual a la carta) ====== */
+.photoStrip{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.photoStrip .photo{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 700px){
+  .photoStrip{
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .photoStrip .photo{
+    scroll-snap-align: start;
+  }
+}
+
+.photoStrip{ scrollbar-width: none; }
+.photoStrip::-webkit-scrollbar{ display: none; }
+
+/* ===== LOGO pegado al título ===== */
+.heroInline{
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  row-gap: 0px;
+}
+
+.brandLogoHero{
+  max-height: 400px;
+  max-width: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 1;
+  display: block;
+
+  /* 👇 borde superior */
+  border-top: 2px solid var(--border);
+  padding-top: 16px;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px){
+  .brandTitle{ font-size: 28px; }
+  .brandLogoHero{ max-height: 34px; max-width: 320px; }
+}
+
+/* ===== LISTA + layout de items (TODO CSS) ===== */
+.itemsList{
+  display: grid;
+  gap: 18px;
+}
+
+/* Tamaños a la derecha */
+/* Removed duplicate/conflicting .itemCard, .itemMain, .sizes, .sizePill and related media queries */
+
+/* contenedor de columnas 350/700 */
+/* Removed duplicate .sizes */
+
+/* cada columna (350 y 700) */
+/* Removed .priceCol */
+
+/* Removed media queries for .itemCard, .itemTop, .itemText, .sizes */
+
+/* ===== ItemCard limpio (nombre/desc + precios a la derecha) ===== */
+.itemCard{
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+}
+
+.itemTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.itemText{ max-width: 70%; }
+
+.sizes{
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.priceCol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.30);
+  min-width: 120px;
+}
+
+.sizeLabel{
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.priceValue{
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--primary);
+}
+
+@media (max-width: 720px){
+  .itemTop{ flex-direction: column; }
+  .itemText{ max-width: 100%; }
+  .sizes{ justify-content: flex-start; }
+  .priceCol{ min-width: 110px; }
+}
+
+/* ===== Categoria con precios a la derecha (como tu captura) ===== */
+.categorySection{ margin-top: 26px; }
+
+.categoryRow{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.categoryPrices{
+  display: flex;
+  gap: 90px;              /* separación entre 350ML y 700 ML */
+  align-items: flex-end;
+  text-align: center;
+}
+
+.categoryPriceCol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categorySize{
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: .22em;
+  font-size: 18px;
+}
+
+.categoryPrice{
+  font-weight: 900;
+  color: var(--primary);
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px){
+  .categoryTitle{ font-size: 34px; }
+  .categoryPrices{ gap: 44px; }
+  .categorySize{ font-size: 16px; }
+  .categoryPrice{ font-size: 16px; }
+}
+
+@media (max-width: 720px){
+  .categoryRow{ flex-direction: column; align-items: flex-start; }
+  .categoryPrices{ gap: 28px; }
+}
+/* ===== Redes sociales estilo Canva ===== */
+.socialBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 28px 0 12px;
+  color: var(--primary);
+}
+
+.socialItem{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.socialItem img{
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.socialItem span{
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 700px){
+  .socialBar{
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .socialItem{
+    font-size: 28px;
+  }
+
+  .socialItem img{
+    width: 44px;
+    height: 44px;
+  }
+}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.brandTitle,
+.categoryTitle{
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.priceValue,
+.categoryPrice{
+  font-weight: 700;
+}
+
+/* ===== Stickers tipo Canva (background) ===== */
+/* 1) Pon tus stickers en: public/images/sticker-boba-1.png y public/images/sticker-boba-2.png */
+
+.pageDecor{
+  position: relative;
+}
+
+/* Todo el contenido por encima del fondo */
+.pageDecor > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Fondo con stickers */
+.pageDecor::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Patrón en toda la página (tipo Canva) */
+  background-image:
+    url("/images/sticker-boba-1.png"),
+    url("/images/sticker-boba-2.png");
+
+  /* Repite ambos stickers por toda la pantalla */
+  background-repeat: repeat, repeat;
+
+  /* Offset distinto para que no queden “en grilla” perfecta */
+  background-position: 0 0, 48px 72px;
+
+  /* Tamaño del sticker (sube/baja aquí) */
+  background-size: 500px 110px, 120px 120px;
+
+  opacity: 0.12; /* sutil para no tapar el menú */
+  filter: saturate(1.05);
+}
+
+@media (max-width: 700px){
+  .pageDecor::before{
+    background-size: 86px 86px, 96px 96px;
+    opacity: 0.10;
+  }
+}

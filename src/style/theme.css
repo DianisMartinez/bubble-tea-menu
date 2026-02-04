@@ -1,0 +1,16 @@
+:root{
+    --bg: #b8d3ca;          /* menta */
+    --card: #ffffff;
+    --primary: #7b1e2b;     /* burdeo */
+    --secondary: #5a3b2e;   /* café */
+    --text: #3a2a25;
+    --muted: #6f5c57;
+    --border: rgba(90,59,46,0.15);
+    --radius: 18px;
+  }
+  
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }

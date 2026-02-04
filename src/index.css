@@ -1,0 +1,10 @@
+/* Reset limpio para menú Bubble Tea */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: color(srgb red green blue);
+}
+
+* {
+  box-sizing: border-box;
+}
