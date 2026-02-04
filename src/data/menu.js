@@ -62,7 +62,7 @@ export const MENU = [
       },
       {
         name: "FRAPPUCHINO",
-        desc: "Doble espresso de café colombiano + leche + chantilly",
+        desc: "Doble espresso de café colombiano + leche + chantilly + tapioca",
        
       },
     ],
