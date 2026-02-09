@@ -5,7 +5,10 @@ export const MENU = [
       {
         name: "Osorno Special",
         desc: "Té de Ceylán + Matcha + leche + tapioca + Popping de Mango",
-        
+        sizes: [
+          { size: "350 ml", price: "4.290" },
+          { size: "700 ml", price: "5.690" },
+        ],
     
       },
     ],
