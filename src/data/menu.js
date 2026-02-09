@@ -3,10 +3,6 @@ export const MENU = [
     title: "RECOMENDADO DE LA CASA",
     items: [
       {
-        sizes: [
-          { size: "350 ml", price: "4.290" },
-          { size: "700 ml", price: "5.690" },
-        ],
         name: "Osorno Special",
         desc: "Té de Ceylán + Matcha + leche + tapioca + Popping de Mango",
         
@@ -59,7 +55,7 @@ export const MENU = [
       {
         name: "OREO CREAM",
         desc: "Oreo + leche + chantilly + tapioca",
-        sizes: [{ size: "500 ml", price: "5.190" }],
+        sizes: [{ size: "500 ml", price: "5.690" }],
       },
       {
         name: "FRAPPUCHINO",
