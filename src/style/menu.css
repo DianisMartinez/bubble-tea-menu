@@ -225,19 +225,18 @@ color: var(--primary);  text-transform: uppercase;
 }
 
 .itemTop{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
+  display: block;
 }
 
-.itemText{ max-width: 70%; }
+.itemText{ max-width: 100%; }
 
 .sizes{
   display: flex;
   gap: 12px;
-  justify-content: flex-end;
-  align-items: flex-start;
+  margin-top: 8px;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .priceCol{
@@ -248,7 +247,7 @@ color: var(--primary);  text-transform: uppercase;
   border-radius: 999px;
   padding: 10px 14px;
   background: rgba(255,255,255,0.30);
-  min-width: 10px;
+  min-width: 120px;
 }
 
 .sizeLabel{
@@ -267,9 +266,6 @@ color: var(--primary);  text-transform: uppercase;
 }
 
 @media (max-width: 720px){
-  .itemTop{ flex-direction: column; }
-  .itemText{ max-width: 100%; }
-  .sizes{ justify-content: flex-start; }
   .priceCol{ min-width: 110px; }
 }
 
