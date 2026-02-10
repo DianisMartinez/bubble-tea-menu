@@ -233,10 +233,11 @@ color: var(--primary);  text-transform: uppercase;
 .sizes{
   display: flex;
   gap: 12px;
-  margin-top: 8px;
+  margin-top: 9px;
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .priceCol{

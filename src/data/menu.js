@@ -69,9 +69,12 @@ export const MENU = [
   },
 
   {
-    title: "AGREGA TUS TOPPINGS POR SOLO $500",
+    title: "AGREGA TUS TOPPINGS POR SOLO",
+
     items: [
+      
       {
+        sizes: [{ price: "500" }],
          name: "POPING DE MANGO",
        
       },
