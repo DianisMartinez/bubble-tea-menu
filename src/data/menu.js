@@ -25,9 +25,8 @@ export const MENU = [
           { size: "700 ml", price: "5.190" },
         ],
       },
-      { name: "MANGO MATCHA FUSION", desc: "Matcha + leche + mango + tapioca" },
+      
       { name: "COCONUT TARO", desc: "Taro Cremoso + Coco + Leche + Tapioca" },
-      { name: "MATCHA LATTE", desc: "Matcha japonés + leche + tapioca" },
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca" },
       { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca" },
     ],
@@ -44,7 +43,7 @@ export const MENU = [
           { size: "700 ml", price: "5.190" },
         ],
       },
-      { name: "BLACKBERRY BLISS", desc: "Mora + té blanco + tapioca" },
+    
       { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango" },
       { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca" },
       { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla" },
