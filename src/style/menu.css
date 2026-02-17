@@ -28,12 +28,23 @@
 }
 
 .categoryTitle{
-  margin: 22px 0 10px;
-  font-size: 44px;
+  margin: 40px 0 16px;
+  font-size: 36px;
   font-weight: 900;
   color: var(--primary);
-  letter-spacing: .26em;
+  letter-spacing: .18em;
   text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.categoryTitle::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .itemName{
@@ -219,9 +230,18 @@ color: var(--primary);  text-transform: uppercase;
 
 /* ===== ItemCard limpio (nombre/desc + precios a la derecha) ===== */
 .itemCard{
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
-  background: transparent;
+  padding: 16px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.itemCard:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
 }
 
 .itemTop{
@@ -232,12 +252,12 @@ color: var(--primary);  text-transform: uppercase;
 
 .sizes{
   display: flex;
-  gap: 12px;
-  margin-top: 9px;
+  gap: 18px;
+  margin-top: 12px;
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .priceCol{
@@ -403,4 +423,20 @@ body{
   70%  { transform: translateX(-200%); }
   75%  { transform: translateX(-300%); }
   95%  { transform: translateX(-300%); }
+}
+.taiwanBadge{
+ margin-top: 1%;
+ margin-bottom: 0%;
+  background: rgba(255,255,255,0.9);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  letter-spacing: .1em;
+}
+.grid{
+  display: grid;
+  gap: 22px;
+  margin-bottom: 26px;
 }

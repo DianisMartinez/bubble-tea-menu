@@ -1,6 +1,6 @@
 export const MENU = [
   {
-    title: "RECOMENDADO DE LA CASA",
+    title: "RECOMENDADO DE LA CASA ⭐️ ",
     items: [
       {
         name: "Osorno Special",
@@ -15,7 +15,7 @@ export const MENU = [
   },
 
   {
-    title: "SABORES ESTRELLA",
+    title: "SABORES ESTRELLA ",
     items: [
       {
         name: "BUBBLE CLASICO",
@@ -52,7 +52,7 @@ export const MENU = [
   },
 
   {
-    title: "ESPECIALES",
+    title: "ESPECIALES  💥",
     items: [
       {
         name: "OREO CREAM",
