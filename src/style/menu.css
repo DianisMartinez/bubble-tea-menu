@@ -122,21 +122,22 @@ color: var(--primary);  text-transform: uppercase;
 
 /* ====== Photo strip (igual a la carta) ====== */
 .photoStrip{
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+  position: relative;
 }
 
 .photoStrip .photo{
-  width: 100%;
+  width: 260px;
   aspect-ratio: 16 / 9;
-  height: 190px;
+  height: auto;
   object-fit: cover;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.35);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  flex-shrink: 0;
 }
 
 @media (max-width: 700px){
@@ -408,22 +409,6 @@ body{
   }
 }
 
-  .photoStrip .photo{
-    animation: slide 10s infinite;
-  }
-
-
-/* animación */
-@keyframes slide {
-  0%   { transform: translateX(0%); }
-  20%  { transform: translateX(0%); }
-  25%  { transform: translateX(-100%); }
-  45%  { transform: translateX(-100%); }
-  50%  { transform: translateX(-200%); }
-  70%  { transform: translateX(-200%); }
-  75%  { transform: translateX(-300%); }
-  95%  { transform: translateX(-300%); }
-}
 .taiwanBadge{
  margin-top: 1%;
  margin-bottom: 0%;
@@ -439,4 +424,27 @@ body{
   display: grid;
   gap: 22px;
   margin-bottom: 26px;
+}
+.categoryHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoryHeaderPrice{
+  font-size: 22px;
+  font-weight: 00;
+  color: var(--primary);
+  margin-top: 6px;
+}
+
+.photoTrack{
+  display: flex;
+  gap: 12px;
+  animation: autoScroll 18s linear infinite;
+}
+
+@keyframes autoScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(calc(-50% + 12px)); }
 }

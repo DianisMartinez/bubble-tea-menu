@@ -7,7 +7,7 @@ export const MENU = [
         desc: "Té de Ceylán + Matcha + leche + tapioca + Popping de Mango",
         sizes: [
           { size: "350 ml", price: "4.290" },
-          { size: "700 ml", price: "5.690" },
+          { size: "700 ml", price: "5.890" },
         ],
     
       },
@@ -22,7 +22,7 @@ export const MENU = [
         desc: "Té Ceylan + leche + tapioca",
         sizes: [
           { size: "350 ml", price: "3.790" },
-          { size: "700 ml", price: "5.190" },
+          { size: "700 ml", price: "5.500" },
         ],
       },
       { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca" },
@@ -40,7 +40,7 @@ export const MENU = [
         desc: "Mango + té blanco + popping de mango",
         sizes: [
           { size: "350 ml", price: "3.790" },
-          { size: "700 ml", price: "5.190" },
+          { size: "700 ml", price: "5.500" },
         ],
       },
     
@@ -68,27 +68,12 @@ export const MENU = [
   },
 
   {
-    title: "AGREGA TUS TOPPINGS POR SOLO",
-
+    title: "AGREGA TUS TOPPINGS POR SOLO $500",
     items: [
-      
-      {
-        sizes: [{ price: "500" }],
-         name: "POPING DE MANGO",
-       
-      },
-      {
-        name: "POPING DE FRUTILLA",
-      
-      },
-      {
-        name: "POPING DE MORA",
-
-      },
-      {
-        name: "TAPIOCA",
-  
-      },
+      { name: "POPING DE MANGO" },
+      { name: "POPING DE FRUTILLA" },
+      { name: "POPING DE MORA" },
+      { name: "TAPIOCA" }
     ],
   },
 

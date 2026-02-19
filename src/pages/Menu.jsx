@@ -6,11 +6,11 @@ export default function Menu() {
   const base = import.meta.env.BASE_URL || "/";
 
   const files = [
-    "menu-1.jpg",
-    "menu-2.jpg",
-    "menu-3.jpg",
-    "menu-4.jpg",
-    "menu-5.jpg",
+    "menu-1.webp",
+    "menu-2.webp",
+    "menu-3.webp",
+    "menu-4.webp",
+    "menu-5.webp",
   ];
 
   const urlCandidates = (file) => [
@@ -37,15 +37,19 @@ export default function Menu() {
       <header className="hero">
         {/* Fotos */}
         <div className="photoStrip">
-          {files.map((file) => (
-            <img
-              key={file}
-              className="photo"
-              src={`/images/${file}`}
-              alt="Bubble Tea"
-              onError={handleImgError}
-            />
-          ))}
+          <div className="photoTrack">
+            {[...files, ...files].map((file, i) => (
+              <img
+                key={i}
+                className="photo"
+                src={`${base}images/${file}`}
+                alt="Bubble Tea"
+                data-file={file}
+                data-fallback="0"
+                onError={handleImgError}
+              />
+            ))}
+          </div>
         </div>
 
         {/* TÍTULO + LOGO */}
