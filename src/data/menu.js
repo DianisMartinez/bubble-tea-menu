@@ -1,13 +1,13 @@
 export const MENU = [
   {
-    title: "RECOMENDADO DE LA CASA ⭐️ ",
+    title: "RECOMENDADO DE LA CASA 🏠 ",
     items: [
       {
         name: "Osorno Special",
         desc: "Té de Ceylán + Matcha + leche + tapioca + Popping de Mango",
         sizes: [
           { size: "350 ml", price: "4.290" },
-          { size: "700 ml", price: "5.890" },
+          { size: "700 ml", price: "5.890 ⭐️" },
         ],
     
       },
@@ -21,10 +21,11 @@ export const MENU = [
         name: "BUBBLE CLASICO",
         desc: "Té Ceylan + leche + tapioca",
         sizes: [
-          { size: "350 ml", price: "3.790" },
-          { size: "700 ml", price: "5.500" },
+          { size: "⭐ 700 ml (Recomendado)", price: "5.500" },
+          { size: "350 ml", price: "3.790" }
         ],
       },
+      { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca" },
       { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca" },
       { name: "COCONUT TARO", desc: "Taro Cremoso + Coco + Leche + Tapioca" },
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca" },
@@ -39,8 +40,8 @@ export const MENU = [
         name: "MANGO PARADISE",
         desc: "Mango + té blanco + popping de mango",
         sizes: [
-          { size: "350 ml", price: "3.790" },
-          { size: "700 ml", price: "5.500" },
+          { size: "⭐ 700 ml", price: "5.500" },
+          { size: "350 ml", price: "3.790" }
         ],
       },
     
@@ -70,9 +71,9 @@ export const MENU = [
   {
     title: "AGREGA TUS TOPPINGS POR SOLO $500",
     items: [
-      { name: "POPING DE MANGO" },
-      { name: "POPING DE FRUTILLA" },
-      { name: "POPING DE MORA" },
+      { name: "POPING DE MANGO 🥭 " },
+      { name: "POPING DE FRUTILLA  🍓" },
+      { name: "POPING DE MORA 🫐 " },
       { name: "TAPIOCA" }
     ],
   },
