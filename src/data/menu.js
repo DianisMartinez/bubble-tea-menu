@@ -21,7 +21,7 @@ export const MENU = [
         name: "BUBBLE CLASICO",
         desc: "Té Ceylan + leche + tapioca",
         sizes: [
-          { size: "⭐ 700 ml (Recomendado)", price: "5.500" },
+          { size: "⭐ 700 ml", price: "5.500" },
           { size: "350 ml", price: "3.790" }
         ],
       },
