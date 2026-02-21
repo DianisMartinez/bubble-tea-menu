@@ -132,12 +132,11 @@ color: var(--primary);  text-transform: uppercase;
 
 .photoStrip .photo{
   flex: 0 0 auto;
-  width: 78vw;
-  height: 240px;
+  width: 300px;
+  height: auto;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 16px;
   scroll-snap-align: start;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 
@@ -389,9 +388,20 @@ body{
 /* 1) Pon tus stickers en: public/images/sticker-boba-1.png y public/images/sticker-boba-2.png */
 /* SOLO EN CELULAR */
 @media (max-width: 600px){
+  .photoStrip{
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .photoStrip .photo{
-    height: 260px;   /* antes 190 */
+    width: 90vw;
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
     border-radius: 20px;
+    scroll-snap-align: center;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   }
 }
 
