@@ -7,10 +7,11 @@ export default function Menu() {
 
   const files = [
     "menu-1.webp",
+    "menu-5.webp",
     "menu-2.webp",
     "menu-3.webp",
     "menu-4.webp",
-    "menu-5.webp",
+    ,
   ];
 
   const urlCandidates = (file) => [
