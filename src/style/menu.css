@@ -123,22 +123,23 @@ color: var(--primary);  text-transform: uppercase;
 /* ====== Photo strip (igual a la carta) ====== */
 .photoStrip{
   display: flex;
-  gap: 12px;
-  overflow: hidden;
-  position: relative;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px;
 }
 
 .photoStrip .photo{
-  width: 300px;
-  height: auto;
+  flex: 0 0 auto;
+  width: 78vw;
+  height: 240px;
   object-fit: cover;
+  border-radius: 18px;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-@media (max-width: 600px){
-  .photoStrip .photo{
-    height: 260px;
-  }
-}
 
 .photoStrip{ scrollbar-width: none; }
 .photoStrip::-webkit-scrollbar{ display: none; }
