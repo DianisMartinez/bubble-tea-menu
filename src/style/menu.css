@@ -129,29 +129,14 @@ color: var(--primary);  text-transform: uppercase;
 }
 
 .photoStrip .photo{
-  width: 260px;
-  aspect-ratio: 16 / 9;
+  width: 300px;
   height: auto;
   object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.35);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  flex-shrink: 0;
 }
 
-@media (max-width: 700px){
-  .photoStrip{
-    grid-auto-flow: column;
-    grid-auto-columns: 78%;
-    grid-template-columns: none;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
+@media (max-width: 600px){
   .photoStrip .photo{
-    scroll-snap-align: start;
+    height: 260px;
   }
 }
 
