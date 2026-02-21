@@ -436,7 +436,13 @@ body{
 .photoTrack{
   display: flex;
   gap: 12px;
-  animation: autoScroll 18s linear infinite;
+  animation: autoScroll 40s linear infinite;
+}
+
+@media (max-width: 600px){
+  .photoTrack{
+    animation: autoScroll 60s linear infinite;
+  }
 }
 
 @keyframes autoScroll {
