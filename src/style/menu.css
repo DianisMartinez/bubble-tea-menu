@@ -394,10 +394,10 @@ body{
   }
 
   .photoStrip .photo{
-    width: 90vw;
+    width: 5px;
     aspect-ratio: 4 / 5;
     object-fit: contain;
-    border-radius: 16px;
+    border-radius: 20px;
     scroll-snap-align: center;
     padding: 0px;
     box-shadow: none
@@ -441,7 +441,7 @@ body{
 
 @media (max-width: 600px){
   .photoTrack{
-    animation: autoScroll 60s linear infinite;
+    animation: autoScroll 30s linear infinite;
   }
 }
 
