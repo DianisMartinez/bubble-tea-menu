@@ -394,7 +394,7 @@ body{
   }
 
   .photoStrip .photo{
-    width: 60vw;
+    width: 50vw;
 
     object-fit: contain;
     border-radius: 50px;
