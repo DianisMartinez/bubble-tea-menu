@@ -27,7 +27,7 @@ export const MENU = [
       },
       { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca" },
       { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca" },
-      { name: "COCONUT TARO", desc: "Taro Cremoso + Coco + Leche + Tapioca" },
+      { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca" },
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca" },
       { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca" },
     ],
