@@ -6,11 +6,11 @@ export default function Menu() {
   const base = import.meta.env.BASE_URL || "/";
 
   const files = [
-    "menu-1.webp",
+    "menu-5.webp",
     "menu-2.webp",
     "menu-3.webp",
     "menu-4.webp",
-    "menu-5.webp",
+    "menu-1.webp",
   ];
 
   const urlCandidates = (file) => [
