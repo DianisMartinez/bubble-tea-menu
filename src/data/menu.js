@@ -44,7 +44,8 @@ export const MENU = [
           { size: "350 ml", price: "3.790" }
         ],
       },
-      { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango + popping de mora" },
+      { name: "BLACKBERRY BREEZE", desc: "Mora + té blanco + popping de mora" },
+      { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango o mora" },
       { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca" },
       { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla" },
       
