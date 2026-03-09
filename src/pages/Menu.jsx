@@ -91,7 +91,7 @@ export default function Menu() {
           target="_blank"
           rel="noopener noreferrer"
           className="socialItem"
-        >
+        > 
           <i className="fa-brands fa-tiktok"></i>
           <span>@bubbleteaosorno</span>
         </a>
@@ -107,7 +107,7 @@ export default function Menu() {
         </a>
       </div>
       <footer className="footer">
-        📍 Osorno · Precios sujetos a cambios
+        Precios sujetos a cambios
       </footer>
     </div>
   );
