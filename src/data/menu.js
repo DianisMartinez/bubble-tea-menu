@@ -25,6 +25,7 @@ export const MENU = [
           { size: "350 ml", price: "3.790" }
         ],
       },
+      { name: "BROWN SUGAR BOBA", desc: "Jarabe Brown Sugar + Leche + Tapioca" },
       { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca" },
       { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca" },
       { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca" },
