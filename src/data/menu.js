@@ -5,6 +5,7 @@ export const MENU = [
       {
         name: "Osorno Special",
         desc: "Té de Ceylán + Matcha + leche + tapioca + Popping de Mango",
+        image: "/images/menu-1.webp",
         sizes: [
           { size: "350 ml", price: "4.290" },
           { size: "700 ml", price: "5.890 ⭐️" },
@@ -27,10 +28,17 @@ export const MENU = [
       },
       { name: "BROWN SUGAR BOBA", desc: "Jarabe Brown Sugar + Leche + Tapioca" },
       { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca" },
-      { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca" },
+      { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca",
+        image: "/images/menu-7.webp",
+       },
       { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca" },
-      { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca" },
-      { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca" },
+      { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca",
+        image: "/images/menu-2.webp",
+       },
+
+      { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca",
+        image: "/images/menu-3.webp",
+       },
     ],
   },
 
@@ -60,6 +68,7 @@ export const MENU = [
         name: "OREO CREAM",
         desc: "Oreo + leche + chantilly + tapioca",
         sizes: [{ size: "500 ml", price: "5.690" }],
+        image: "/images/menu-8.webp",
       },
       {
         name: "FRAPPUCHINO",

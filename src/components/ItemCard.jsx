@@ -3,9 +3,10 @@ export default function ItemCard({ item }) {
     <div className="itemCard">
       <div className="itemTop">
 
-        {/* Nombre + tamaños + desc */}
+        {/* Texto del producto */}
         <div className="itemText">
-        {item.sizes?.length ? (
+
+          {item.sizes?.length ? (
             <div className="sizes">
               {item.sizes.map((s) => (
                 <div className="priceCol" key={s.size}>
@@ -19,13 +20,22 @@ export default function ItemCard({ item }) {
           {/* Título */}
           <div className="itemName">{item.name}</div>
 
-
           {/* Descripción */}
           {item.desc ? (
             <div className="itemDesc">{item.desc}</div>
           ) : null}
 
         </div>
+
+        {/* Imagen del producto */}
+        {item.image ? (
+          <img
+            className="itemImage"
+            src={item.image}
+            alt={item.name}
+          />
+        ) : null}
+
       </div>
 
       {/* Tags abajo */}

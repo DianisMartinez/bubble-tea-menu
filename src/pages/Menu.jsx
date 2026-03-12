@@ -5,75 +5,27 @@ import "../style/menu.css";
 export default function Menu() {
   const base = import.meta.env.BASE_URL || "/";
 
-  const files = [
-    "menu-5.webp",
-    "menu-2.webp",
-    "menu-3.webp",
-    "menu-4.webp",
-    "menu-1.webp",
-    "menu-6.webp",
-    "menu-7.webp",
-  ];
 
-  const urlCandidates = (file) => [
-    `${base}images/${file}`,
-    `/images/${file}`,
-    `images/${file}`,
-  ];
-
-  const handleImgError = (e) => {
-    const img = e.currentTarget;
-    const file = img.getAttribute("data-file");
-    const idx = Number(img.getAttribute("data-fallback") || "0");
-    const candidates = urlCandidates(file);
-
-    if (idx + 1 < candidates.length) {
-      img.setAttribute("data-fallback", String(idx + 1));
-      img.src = candidates[idx + 1];
-    }
-  };
 
   return (
     <div className="wrap pageDecor">
       {/* HERO */}
       <header className="hero">
         {/* Fotos */}
-        <div className="photoStrip">
-          <div className="photoTrack">
-            {[...files, ...files].map((file, i) => (
-              <img
-                key={i}
-                className="photo"
-                src={`${base}images/${file}`}
-                alt="Bubble Tea"
-                data-file={file}
-                data-fallback="0"
-                onError={handleImgError}
-              />
-            ))}
-          </div>
-        </div>
 
         {/* TÍTULO + LOGO */}
         <div className="heroBody">
-
-          <div className="heroInline">
-            <span className="brandTitle"> Menu </span>
-          </div>
-
-          <div className="taiwanBadge">
-            Inspirado en Taiwan 🇹🇼
-          </div>
-
           <img
-            src="/images/logo.png"
+            src={`${base}images/logo.png`}
             alt="Bubble Tea & Coffee logo"
             className="brandLogoHero"
             onError={(e) => (e.currentTarget.style.display = "none")}
           />
-
+           <div className="taiwanBadge">
+            Inspirado en Taiwan 🇹🇼
+          </div>
           <p className="subtitle">
-            Bebida fría de té o fruta + bolitas masticables 🧋😍
+            Bebida Asiatica frutal o leche + bolitas masticables 🧋😍
           </p>
 
         </div>
