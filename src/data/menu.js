@@ -25,19 +25,25 @@ export const MENU = [
           { size: "⭐ 700 ml", price: "5.500" },
           { size: "350 ml", price: "3.790" }
         ],
+        image: "/images/menu-3.webp",
+
       },
-      { name: "BROWN SUGAR BOBA", desc: "Jarabe Brown Sugar + Leche + Tapioca" },
-      { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca" },
+      { name: "BROWN SUGAR BOBA", desc: "Jarabe Brown Sugar + Leche + Tapioca",
+
+       },
+      { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca",
+
+       },
       { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca",
         image: "/images/menu-7.webp",
        },
       { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca" },
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca",
-        image: "/images/menu-2.webp",
+        image: "/images/menu-5.webp",
        },
 
       { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca",
-        image: "/images/menu-3.webp",
+        image: "/images/menu-4.webp",
        },
     ],
   },
@@ -56,7 +62,8 @@ export const MENU = [
       { name:" Maracuya Pop", desc: "Maracuya + te blanco + popping de mango" },
       { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango o mora" },
       { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca" },
-      { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla" },
+      { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla",    image: "/images/menu-10.webp",
+       },
       
     ],
   },
@@ -68,12 +75,12 @@ export const MENU = [
         name: "OREO CREAM",
         desc: "Oreo + leche + chantilly + tapioca",
         sizes: [{ size: "500 ml", price: "5.690" }],
-        image: "/images/menu-8.webp",
+        image: "/images/menu-9.webp",
       },
       {
         name: "FRAPPUCHINO",
         desc: "Doble espresso de café colombiano + leche + chantilly + tapioca",
-       
+        image: "/images/menu-8.webp",
       },
     ],
   },
