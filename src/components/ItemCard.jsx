@@ -10,8 +10,8 @@ export default function ItemCard({ item }) {
             <div className="sizes">
               {item.sizes.map((s) => (
                 <div className="priceCol" key={s.size}>
-                  <div className="sizeLabel">{s.size}</div>
-                  <div className="priceValue">${s.price}</div>
+                <div className="priceValue">${s.price}</div>
+                <div className="sizeLabel">{s.size}</div> 
                 </div>
               ))}
             </div>

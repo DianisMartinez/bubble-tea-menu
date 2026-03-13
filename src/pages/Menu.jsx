@@ -11,9 +11,6 @@ export default function Menu() {
     <div className="wrap pageDecor">
       {/* HERO */}
       <header className="hero">
-        {/* Fotos */}
-
-        {/* TÍTULO + LOGO */}
         <div className="heroBody">
           <img
             src={`${base}images/logo.png`}
