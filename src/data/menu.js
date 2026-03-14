@@ -1,6 +1,6 @@
 export const MENU = [
   {
-    title: "RECOMENDADO DE LA CASA 🏠 ",
+    title: "RECOMENDADO DE LA CASA ⭐️",
     items: [
       {
         name: "Osorno Special",
@@ -8,7 +8,7 @@ export const MENU = [
         image: "/images/menu-1.webp",
         sizes: [
           { size: "350 ml", price: "4.290" },
-          { size: "700 ml", price: "5.890 ⭐️" },
+          { size: "700 ml 🧚🏻‍♀️", price: "5.890 " },
         ],
     
       },
@@ -22,27 +22,58 @@ export const MENU = [
         name: "BUBBLE CLASICO",
         desc: "Té Ceylan + leche + tapioca",
         sizes: [
-          { size: "⭐ 700 ml", price: "5.500" },
-          { size: "350 ml", price: "3.790" }
+          { size: "350 ml", price: "3.790" },
+          { size: "700ml 🍃", price: "5.500" },
+          
         ],
         image: "/images/menu-3.webp",
 
       },
       { name: "BROWN SUGAR BOBA", desc: "Jarabe Brown Sugar + Leche + Tapioca",
+        sizes: [
+          { size: "350 ml", price: "3.790" },
+          { size: "700 ml 🧸", price: "5.500 " },
+        ],
+        image: "/images/menu-11.webp",
+
 
        },
       { name: "MANGO MATCHA FUSION", desc: "Matcha Japones + Mango + Leche + Tapioca",
+        sizes: [
+               { size: "350 ml", price: "3.790" },
+               { size: " 700 ml 🧋", price: "5.500" },
+        ],
 
        },
       { name: "MATCHA LATTE", desc: "Matcha Japones + Leche + Tapioca",
-        image: "/images/menu-7.webp",
+        sizes: [
+        { size: "350 ml", price: "3.790" },
+            { size: " 700 ml😼", price: "5.500" },
+          
+        ],
+        image: "/images/menu-12.webp",
        },
-      { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca" },
+      { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca",
+        sizes: [
+           { size: "350 ml", price: "3.790" },
+           { size: "700 ml🥥", price: "5.500" },
+        
+        ],
+       },
+      
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca",
+        sizes: [
+           { size: "350 ml", price: "3.790" },
+           { size: "700 ml 🤍", price: "5.500" },
+        ],
         image: "/images/menu-5.webp",
        },
 
       { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca",
+        sizes: [
+           { size: "350 ml", price: "3.790" },
+          { size: " 700 ml 👽", price: "5.500" },
+        ],
         image: "/images/menu-4.webp",
        },
     ],
@@ -55,14 +86,38 @@ export const MENU = [
         name: "MANGO PARADISE",
         desc: "Mango + té blanco + popping de mango",
         sizes: [
-          { size: "⭐ 700 ml", price: "5.500" },
-          { size: "350 ml", price: "3.790" }
+          { size: "350 ml", price: "3.790" },
+          { size: " 700 ml 👀", price: "5.500" },
+          
         ],
       },
-      { name:" Maracuya Pop", desc: "Maracuya + te blanco + popping de mango" },
-      { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango o mora" },
-      { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca" },
-      { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla",    image: "/images/menu-10.webp",
+      { name:" Maracuya Pop", desc: "Maracuya + te blanco + popping de mango",
+        sizes: [
+          { size: "350 ml", price: "3.790" },
+          { size: " 700 ml 🦹🏽‍♀️", price: "5.500" },
+          
+        ],
+       },
+      { name: "TROPICAL MIX", desc: "Mango + mora + te blanco + popping de mango o mora",
+        sizes: [
+          { size: "350 ml", price: "3.790" },
+          { size: " 700 ml ⭐️", price: "5.500" },
+          
+        ],
+       },
+      { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca",
+        sizes: [
+          { size: "350 ml", price: "3.790" },
+          { size: " 700 ml 👁️", price: "5.500" },
+          
+        ],
+       },
+      { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla",
+        sizes: [
+          { size: "350 ml", price: "3.790" },
+          { size: " 700 ml 🤤", price: "5.500" },
+          
+        ],    image: "/images/menu-10.webp",
        },
       
     ],
@@ -72,14 +127,15 @@ export const MENU = [
     title: "ESPECIALES  💥",
     items: [
       {
-        name: "OREO CREAM",
+        name: "OREO CREAM ",
         desc: "Oreo + leche + chantilly + tapioca",
-        sizes: [{ size: "500 ml", price: "5.690" }],
+        sizes: [{ size: "500 ml 🍪", price: "5.690" }],
         image: "/images/menu-9.webp",
       },
       {
         name: "FRAPPUCHINO",
         desc: "Doble espresso de café colombiano + leche + chantilly + tapioca",
+        sizes: [{ size: "500 ml ☕️", price: "5.690" }],
         image: "/images/menu-8.webp",
       },
     ],

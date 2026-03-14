@@ -1,6 +1,7 @@
 /* Reset limpio para menú Bubble Tea */
 html, body {
   margin: 0;
+  padding: 0;
 }
 
 * {
