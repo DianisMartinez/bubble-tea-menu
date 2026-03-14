@@ -1,6 +1,7 @@
 import { MENU } from "../data/menu";
 import Category from "../components/Category";
 import "../style/menu.css";
+import { DrinkAI } from "../components/DrinkAI";
 
 export default function Menu() {
   const base = import.meta.env.BASE_URL || "/";
