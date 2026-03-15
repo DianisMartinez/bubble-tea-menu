@@ -16,7 +16,7 @@ export const MENU = [
   },
 
   {
-    title: "SABORES ESTRELLA ",
+    title: "SABORES ESTRELLA ", 
     items: [
       {
         name: "BUBBLE CLASICO",

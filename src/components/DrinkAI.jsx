@@ -7,6 +7,7 @@ export const DrinkAI = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
+      setMessage("¡Hola! Soy tu asistente de bebidas. Haz clic en mí para obtener una recomendación personalizada.");
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -14,11 +15,17 @@ export const DrinkAI = () => {
 
   const askAI = () => {
     const drinks = [
-      "🧋 Te recomiendo un Brown Sugar Boba",
-      "💜 Prueba el Taro Milk Tea",
-      "🍵 El Matcha Latte es una excelente opción",
-      "🍹 Un Maracuyá Tea bien refrescante",
-      "🤎 El clásico Milk Tea nunca falla"
+      "OSORNO SPECIAL",
+      "BUBBLE CLASICO",
+      "BROWN SUGAR BOBA",
+      "MANGO MATCHA FUSION",
+      "MATCHA LATTE",
+      "COCONUT TARO",
+      "MARACUYÁ",
+      "TARO MILK TEA",
+      "MANGO PARADISE",
+      "GREEN ISLAND",
+      
     ];
 
     const random = drinks[Math.floor(Math.random() * drinks.length)];
