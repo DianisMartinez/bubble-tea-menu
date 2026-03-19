@@ -7,7 +7,7 @@ export const DrinkAI = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-      setMessage("¡Hola! Soy tu asistente de bebidas. Haz clic en mí para obtener una recomendación personalizada.");
+      setMessage("Tócame y te recomiendo una bebida 🧋");
     }, 3000);
 
     return () => clearTimeout(timer);

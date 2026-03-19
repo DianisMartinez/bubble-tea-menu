@@ -123,24 +123,7 @@ export const MENU = [
     ],
   },
 
-  {
-    title: "ESPECIALES  💥",
-    items: [
-      {
-        name: "OREO CREAM ",
-        desc: "Oreo + leche + chantilly + tapioca",
-        sizes: [{ size: "500 ml 🍪", price: "5.690" }],
-        image: "/images/menu-9.webp",
-      },
-      {
-        name: "FRAPPUCHINO",
-        desc: "Doble espresso de café colombiano + leche + chantilly + tapioca",
-        sizes: [{ size: "500 ml ☕️", price: "5.690" }],
-        image: "/images/menu-8.webp",
-      },
-    ],
-  },
-
+  
   {
     title: "AGREGA TUS TOPPINGS POR SOLO $500",
     items: [
