@@ -461,3 +461,35 @@ body{
 
 
 
+.tapiocaContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.tapioca {
+  position: absolute;
+  top: 20px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  animation: fall linear forwards;
+}
+
+.tapioca::before {
+  content: "🧋";
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}

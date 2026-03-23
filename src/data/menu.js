@@ -1,6 +1,6 @@
 export const MENU = [
   {
-    title: "RECOMENDADO DE LA CASA ⭐️",
+    title: "RECOMENDADO DE LA CASA ⭐️⭐️⭐️",
     items: [
       {
         name: "Osorno Special",

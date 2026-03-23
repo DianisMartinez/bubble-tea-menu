@@ -7,7 +7,7 @@ export const DrinkAI = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-      setMessage("Tócame y te recomiendo una bebida 🧋");
+      setMessage("Tócame y Te recomiendo una bebida 🧋");
     }, 3000);
 
     return () => clearTimeout(timer);

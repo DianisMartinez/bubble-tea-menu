@@ -1,10 +1,34 @@
 import { MENU } from "../data/menu";
 import Category from "../components/Category";
 import "../style/menu.css";
-import { DrinkAI } from "../components/DrinkAI";
+import { useEffect } from "react";
 
 export default function Menu() {
   const base = import.meta.env.BASE_URL || "/";
+
+  useEffect(() => {
+    const container = document.createElement("div");
+    container.className = "tapiocaContainer";
+    document.body.appendChild(container);
+
+    for (let i = 0; i < 25; i++) {
+      const boba = document.createElement("div");
+      boba.className = "tapioca";
+      boba.style.left = Math.random() * 100 + "vw";
+      boba.style.animationDuration = 5 + Math.random() * 5 + "s";
+      boba.style.opacity = Math.random().toString();
+      container.appendChild(boba);
+    }
+
+    const timeout = setTimeout(() => {
+      container.remove();
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+      container.remove();
+    };
+  }, []);
 
 
 
