@@ -1,25 +1,74 @@
-.wrap{
+/* ===== VARIABLES KAWAII ===== */
+:root {
+  --primary: #c084b0;
+  --secondary: #f4a7c3;
+  --accent: #b5e8e0;
+  --muted: #a89bb5;
+  --border: rgba(192, 132, 176, 0.25);
+  --bg: linear-gradient(160deg, #fff0f8 0%, #f0f8ff 50%, #f8fff0 100%);
+  --card-bg: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== FONDO GENERAL ===== */
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* ===== WRAP ===== */
+.wrap {
   max-width: 980px;
   margin: 0 auto;
   padding: 18px;
 }
 
-.hero{
+/* ===== HERO ===== */
+.hero {
   padding: 12px 6px 18px;
 }
 
-.brandTitle{
-  font-size: 32px;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: .2px;
-  white-space: nowrap; /* evita salto de línea */
-  line-height: 1;
-  display: inline-block;
+.heroBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6px 2px 2px;
 }
 
-.subtitle{
-  margin-top: 8px;
+.brandLogoHero {
+  max-height: 500px;
+  max-width: 500px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  border-top: 2px solid var(--border);
+  padding-top: 16px;
+  margin-top: 12px;
+  /* efecto suave */
+
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.taiwanBadge {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #f9c6e0, #c9e8f9);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  letter-spacing: .1em;
+}
+
+.subtitle {
+  margin-top: 10px;
   color: var(--muted);
   text-align: center;
   max-width: 520px;
@@ -27,9 +76,10 @@
   margin-right: auto;
 }
 
-.categoryTitle{
+/* ===== CATEGORÍAS ===== */
+.categoryTitle {
   margin: 48px 0 18px;
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 900;
   color: var(--primary);
   letter-spacing: .12em;
@@ -39,457 +89,186 @@
   text-align: center;
 }
 
-.categoryTitle::after{
+.categoryTitle::after {
   content: "";
   display: block;
   width: 60%;
   height: 3px;
   margin: 12px auto 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
 }
 
-.itemName{
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* ===== ITEM CARD ===== */
+.itemCard {
+  padding: 18px 16px;
+  border-radius: 24px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 18px rgba(192,132,176,0.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* brillo esquina kawaii */
+.itemCard::before {
+  content: "";
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, rgba(244,167,195,0.35), transparent 70%);
+  border-radius: 50%;
+}
+
+.itemCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(192,132,176,0.22);
+}
+
+.itemTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.itemText { max-width: 100%; flex: 1; }
+
+/* ===== IMAGEN producto — más grande ===== */
+.itemImage {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(192,132,176,0.20);
+  /* si la foto no es muy buena, esto la suaviza */
+  filter: brightness(1.04) saturate(1.1);
+}
+
+.itemName {
   font-weight: 900;
-color: var(--primary);  text-transform: uppercase;
+  color: var(--primary);
+  text-transform: uppercase;
   letter-spacing: .4px;
+  font-size: 15px;
 }
 
-.itemDesc{
+.itemDesc {
   color: var(--muted);
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.tag{
+/* ===== PRECIOS ===== */
+.sizes {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.priceCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 14px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(249,198,224,0.35), rgba(181,232,224,0.35));
+  min-width: 90px;
+  border: 1px solid var(--border);
+}
+
+.priceValue {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.sizeLabel {
+  font-size: 11px;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ===== TAGS ===== */
+.tag {
   display: inline-flex;
-  margin-top: 10px;
-  font-size: 12px;
-  padding: 6px 10px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(131, 211, 215, 0.115);
+  background: rgba(181,232,224,0.25);
+  color: var(--muted);
 }
 
-.tagsRow{
+.tagsRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
-.footer{
+/* ===== REDES SOCIALES ===== */
+.socialBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 32px 0 12px;
+  color: var(--primary);
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 28px;
+  font-weight: 600;
+  transition: transform .2s ease;
+}
+
+.socialItem:hover {
+  transform: scale(1.08);
+}
+
+/* ===== FOOTER ===== */
+.footer {
   margin-top: 22px;
   padding: 12px 6px;
   color: var(--muted);
   font-size: 13px;
-}
-
-.heroBody{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 6px 2px 2px;
-  
-}
-
-/* Botoncitos */
-.ctaRow{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.cta{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 800;
-  border: 1px solid var(--border);
-}
-
-.cta.primary{
-  background: var(--primary);
-  color: #fff;
-  border-color: transparent;
-}
-
-.cta.ghost{
-  background: transparent;
-  color: var(--secondary);
-}
-
-/* ====== Photo strip (igual a la carta) ====== */
-.photoStrip{
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 6px;
-}
-
-.photoStrip .photo{
-  flex: 0 0 auto;
-  width: 280px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-  scroll-snap-align: start;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.photoStrip .photo:hover{
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-
-.photoStrip{ scrollbar-width: none; }
-.photoStrip::-webkit-scrollbar{ display: none; }
-
-/* ===== LOGO pegado al título ===== */
-.heroInline{
-  display: inline-flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  row-gap: 0px;
-}
-
-.brandLogoHero{
-  max-height: 500px;
-  max-width: 500px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  display: block;
-
-  /* 👇 borde superior */
-  border-top: 2px solid var(--border);
-  padding-top: 16px;
-  margin-top: 12px;
-}
-
-/* ===== LOGO GRANDE EN CELULAR ===== */
-@media (max-width: 100px){
-  .heroInline{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .brandTitle{
-    font-size: 30px;
-    white-space: normal;
-  }
-
-  .brandLogoHero{
-    max-height: 110px;   /* logo grande */
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-
-    /* en móvil sin borde ni espacios extra */
-    border-top: 0;
-    padding-top: 0;
-    margin-top: 4px;
-  }
-}
-
-/* ===== LISTA + layout de items (TODO CSS) ===== */
-.itemsList{
-  display: grid;
-  gap: 18px;
-}
-
-/* Tamaños a la derecha */
-/* Removed duplicate/conflicting .itemCard, .itemMain, .sizes, .sizePill and related media queries */
-
-/* contenedor de columnas 350/700 */
-/* Removed duplicate .sizes */
-
-/* cada columna (350 y 700) */
-/* Removed .priceCol */
-
-/* Removed media queries for .itemCard, .itemTop, .itemText, .sizes */
-
-/* ===== ItemCard limpio (nombre/desc + precios a la derecha) ===== */
-.itemCard{
-  padding: 18px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.35));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.itemCard:hover{
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.12);
-}
-
-.itemTop{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.itemText{ max-width: 100%; }
-
-.itemImage{
-  width: 50px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-
-.sizes{
-  display: flex;
-  gap: 14px;
-  margin-top: 14px;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
-.priceCol{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 16px;
-  padding: 10px 16px;
-  background: rgba(255,255,255,0.55);
-  min-width: 110px;
-  border: 1px solid var(--border);
-}
-
-.sizeLabel{
-  font-size: 12px;
-  opacity: 0.7;
-  line-height: 1.1;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.priceValue{
-  font-size: 16px;
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--primary);
-}
-
-@media (max-width: 720px){
-  .priceCol{ min-width: 110px; }
-}
-
-/* ===== Categoria con precios a la derecha (como tu captura) ===== */
-.categorySection{ margin-top: 26px; }
-
-.categoryRow{
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.categoryPrices{
-  display: flex;
-  gap: 90px;              /* separación entre 350ML y 700 ML */
-  align-items: flex-end;
   text-align: center;
 }
 
-.categoryPriceCol{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.categorySize{
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: .22em;
-  font-size: 18px;
-}
-
-.categoryPrice{
-  font-weight: 900;
-  color: var(--primary);
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-@media (max-width: 900px){
-  .categoryTitle{ font-size: 34px; }
-  .categoryPrices{ gap: 44px; }
-  .categorySize{ font-size: 16px; }
-  .categoryPrice{ font-size: 16px; }
-}
-
-@media (max-width: 720px){
-  .categoryRow{ flex-direction: column; align-items: flex-start; }
-  .categoryPrices{ gap: 28px; }
-}
-/* ===== Redes sociales estilo Canva ===== */
-.socialBar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  padding: 28px 0 12px;
-  color: var(--primary);
-}
-
-.socialItem{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: var(--primary);
-  font-size: 36px;
-  font-weight: 500;
-}
-
-.socialItem img{
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-}
-
-.socialItem span{
-  letter-spacing: 0.5px;
-}
-
-/* Responsive */
-@media (max-width: 700px){
-  .socialBar{
-    flex-direction: column;
-    gap: 22px;
-  }
-
-  .socialItem{
-    font-size: 28px;
-  }
-
-  .socialItem img{
-    width: 44px;
-    height: 44px;
-  }
-}
-body{
-  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-.brandTitle,
-.categoryTitle{
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.priceValue,
-.categoryPrice{
-  font-weight: 700;
-}
-
-/* ===== Stickers tipo Canva (background) ===== */
-/* 1) Pon tus stickers en: public/images/sticker-boba-1.png y public/images/sticker-boba-2.png */
-/* SOLO EN CELULAR */
-@media (max-width: 400px){
-  .photoStrip{
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .photoStrip .photo{
-    width: 30vw;
-
-    object-fit: contain;
-    border-radius: 50px;
-    scroll-snap-align: center;
-    box-shadow: none
-  }
-}
-
-.taiwanBadge{
- margin-top: 1%;
- margin-bottom: 0%;
-  background: rgba(255,255,255,0.9);
-  color: var(--primary);
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 999px;
-  letter-spacing: .1em;
-}
-.grid{
-  display: grid;
-  gap: 22px;
-  margin-bottom: 26px;
-}
-.categoryHeader{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.categoryHeaderPrice{
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-top: 4px;
-  opacity: 0.8;
-}
-
-.photoTrack{
-  display: flex;
-  gap: 12px;
-  animation: autoScroll 40s linear infinite;
-}
+/* ===== TAPIOCA ANIMATION ===== */
 
 
 
-.tapiocaContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 999;
-}
 
-.tapioca {
-  position: absolute;
-  top: 20px;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  animation: fall linear forwards;
-}
 
-.tapioca::before {
-  content: "🧋";
-}
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+  .socialBar { flex-direction: column; gap: 20px; }
+  .socialItem { font-size: 22px; }
+  .categoryTitle { font-size: 24px; }
 }
