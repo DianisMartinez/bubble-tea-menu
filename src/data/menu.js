@@ -59,6 +59,7 @@ export const MENU = [
            { size: "700 ml🥥", price: "5.500" },
         
         ],
+        image: "/images/menu-14.webp",
        },
       
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca",
@@ -90,6 +91,8 @@ export const MENU = [
           { size: " 700 ml 👀", price: "5.500" },
           
         ],
+        image: "/images/menu-6.webp",
+
       },
       { name:" Maracuya Pop", desc: "Maracuya + te blanco + popping de mango",
         sizes: [
@@ -104,6 +107,7 @@ export const MENU = [
           { size: " 700 ml ⭐️", price: "5.500" },
           
         ],
+        image: "/images/menu-15.webp",
        },
       { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca",
         sizes: [
