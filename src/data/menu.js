@@ -53,14 +53,7 @@ export const MENU = [
         ],
         image: "/images/menu-12.webp",
        },
-      { name: "COCONUT TARO", desc: "Taro Cremoso + Coco Rayado + Leche + Tapioca",
-        sizes: [
-           { size: "350 ml", price: "3.790" },
-           { size: "700 ml🥥", price: "5.500" },
-        
-        ],
-        image: "/images/menu-14.webp",
-       },
+      
       
       { name: "TARO DREAM", desc: "Taro Cremoso + Leche + Tapioca",
         sizes: [
