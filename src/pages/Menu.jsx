@@ -1,5 +1,6 @@
 import { MENU } from "../data/menu";
 import Category from "../components/Category";
+import BubbleScene from "../components/BubbleScene";
 import "../style/menu.css";
 import { useEffect } from "react";
 
@@ -14,6 +15,7 @@ export default function Menu() {
     <div className="wrap pageDecor">
       {/* HERO */}
       <header className="hero">
+        <BubbleScene />
         <div className="heroBody">
           <img
             src={`${base}images/logo.png`}
