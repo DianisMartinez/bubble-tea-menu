@@ -1,16 +1,53 @@
-# React + Vite
+# Bubble Tea & Coffee — Menú Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de menú digital creado con React y Vite para una cafetería de Bubble Tea.
 
-Currently, two official plugins are available:
+## Qué incluye
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Componente principal de menú con categorías y productos.
+- Estilo moderno inspirado en bubble tea y diseño móvil-first.
+- Integración de íconos sociales con FontAwesome.
+- Configuración lista para despliegue en GitHub Pages.
 
-## React Compiler
+## Cómo usarlo localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Instala dependencias:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Ejecuta el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+3. Abre el navegador en la URL que indique Vite.
+
+## Cómo compilar para producción
+
+```bash
+npm run build
+```
+
+El resultado se genera en `dist/`.
+
+## Deploy en GitHub Pages
+
+Esta aplicación está configurada para desplegarse en GitHub Pages con base `https://DianisMartinez.github.io/bubble-tea-menu/`.
+
+### Usando GitHub Actions
+
+El proyecto tiene una acción en `.github/workflows/deploy.yml` que construye y publica automáticamente cada vez que hagas push a `main`.
+
+### Pasos para activar
+
+1. Confirma que el repositorio remoto apunta a `https://github.com/DianisMartinez/bubble-tea-menu.git`.
+2. Haz commit y push a `main`.
+3. En GitHub, activa Pages desde la rama `gh-pages`.
+
+## Notas
+
+- Quité la dependencia `openai` porque no se estaba usando en este sitio.
+- Si quieres agregar animaciones 3D con `three.js`, puedo ayudarte a integrarlo.
