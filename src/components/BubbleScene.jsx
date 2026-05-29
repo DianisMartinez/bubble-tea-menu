@@ -58,6 +58,14 @@ export default function BubbleScene() {
 
     scene.add(bubbles);
 
+    let pointer = { x: 0, y: 0 };
+    const handlePointerMove = (event) => {
+      const { innerWidth, innerHeight } = window;
+      pointer.x = (event.clientX / innerWidth - 0.5) * 2;
+      pointer.y = (event.clientY / innerHeight - 0.5) * 2;
+    };
+    window.addEventListener("pointermove", handlePointerMove);
+
     const handleResize = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
@@ -82,6 +90,9 @@ export default function BubbleScene() {
         if (bubble.position.y > 8.5) bubble.position.y = -8.5;
       });
 
+      bubbles.rotation.y += (pointer.x * 0.14 - bubbles.rotation.y) * 0.06;
+      bubbles.rotation.x += (pointer.y * 0.1 - bubbles.rotation.x) * 0.06;
+
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
@@ -91,6 +102,7 @@ export default function BubbleScene() {
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("pointermove", handlePointerMove);
       renderer.dispose();
       scene.traverse((object) => {
         if (object.geometry) object.geometry.dispose();

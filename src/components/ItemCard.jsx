@@ -1,6 +1,33 @@
+import { useRef } from "react";
+
 export default function ItemCard({ item }) {
+  const cardRef = useRef(null);
+  const base = import.meta.env.BASE_URL || "/";
+
+  const handlePointerMove = (event) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const px = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const py = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    card.style.setProperty("--px", px.toFixed(3));
+    card.style.setProperty("--py", py.toFixed(3));
+  };
+
+  const handlePointerLeave = () => {
+    const card = cardRef.current;
+    if (!card) return;
+    card.style.setProperty("--px", 0);
+    card.style.setProperty("--py", 0);
+  };
+
   return (
-    <div className="itemCard">
+    <div
+      className="itemCard"
+      ref={cardRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+    >
       <div className="itemTop">
 
         {/* Texto del producto */}
@@ -31,7 +58,7 @@ export default function ItemCard({ item }) {
         {item.image ? (
           <img
             className="itemImage"
-            src={item.image}
+            src={`${base}${item.image}`}
             alt={item.name}
           />
         ) : null}
