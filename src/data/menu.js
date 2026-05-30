@@ -5,7 +5,7 @@ export const MENU = [
       {
         name: "Osorno Special",
         desc: "Té de Ceylán + Matcha + leche + tapioca + Popping de Mango",
-        image: "/images/menu-1.webp",
+        image: "images/menu-1.webp",
         sizes: [
           { size: "350 ml", price: "4.290" },
           { size: "700 ml 🧚🏻‍♀️", price: "5.890 " },
@@ -26,7 +26,7 @@ export const MENU = [
           { size: "700ml 🍃", price: "5.500" },
           
         ],
-        image: "/images/menu-3.webp",
+        image: "images/menu-3.webp",
 
       },
       { name: "BROWN SUGAR BOBA", desc: "Jarabe Brown Sugar + Leche + Tapioca",
@@ -34,7 +34,7 @@ export const MENU = [
           { size: "350 ml", price: "3.790" },
           { size: "700 ml 🧸", price: "5.500 " },
         ],
-        image: "/images/menu-11.webp",
+        image: "images/menu-11.webp",
 
 
        },
@@ -51,7 +51,7 @@ export const MENU = [
             { size: " 700 ml😼", price: "5.500" },
           
         ],
-        image: "/images/menu-12.webp",
+        image: "images/menu-12.webp",
        },
       
       
@@ -60,7 +60,7 @@ export const MENU = [
            { size: "350 ml", price: "3.790" },
            { size: "700 ml 🤍", price: "5.500" },
         ],
-        image: "/images/menu-5.webp",
+        image: "images/menu-5.webp",
        },
 
       { name: "THAI TEA", desc: "Te Thailandes + leche + tapioca",
@@ -68,7 +68,7 @@ export const MENU = [
            { size: "350 ml", price: "3.790" },
           { size: " 700 ml 👽", price: "5.500" },
         ],
-        image: "/images/menu-4.webp",
+        image: "images/menu-4.webp",
        },
     ],
   },
@@ -84,7 +84,7 @@ export const MENU = [
           { size: " 700 ml 👀", price: "5.500" },
           
         ],
-        image: "/images/menu-6.webp",
+        image: "images/menu-6.webp",
 
       },
       { name:" Maracuya Pop", desc: "Maracuya + te blanco + popping de mango",
@@ -100,21 +100,21 @@ export const MENU = [
           { size: " 700 ml ⭐️", price: "5.500" },
           
         ],
-        image: "/images/menu-15.webp",
+        image: "images/menu-15.webp",
        },
       { name: "GREEN ISLAND", desc: "Té Verde + mango + tapioca",
         sizes: [
           { size: "350 ml", price: "3.790" },
           { size: " 700 ml 👁️", price: "5.500" },
         ],
-          image: "/images/menu-13.webp",
+          image: "images/menu-13.webp",
        },
       { name: "FRUTILLITA", desc: "Té Ceylan + frutilla + popping de frutilla",
         sizes: [
           { size: "350 ml", price: "3.790" },
           { size: " 700 ml 🤤", price: "5.500" },
           
-        ],    image: "/images/menu-10.webp",
+        ],    image: "images/menu-10.webp",
        },
       
     ],
@@ -126,13 +126,13 @@ export const MENU = [
         name: "OREO CREAM ",
         desc: "Oreo + leche + chantilly + tapioca",
         sizes: [{ size: "500 ml 🍪", price: "5.690" }],
-        image: "/images/menu-9.webp",
+        image: "images/menu-9.webp",
       },
       {
         name: "FRAPPUCHINO",
         desc: "Doble espresso de café colombiano + leche + chantilly + tapioca",
         sizes: [{ size: "500 ml ☕️", price: "5.690" }],
-        image: "/images/menu-8.webp",
+        image: "images/menu-8.webp",
       },
     ],
   },
