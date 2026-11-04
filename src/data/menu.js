@@ -5,7 +5,7 @@ export const MENU = [
     featured: true,
     items: [
       {
-        name: "Osorno Special",
+        name: "Temuco Special",
         zh: "招牌特調",
         desc: "Té de Ceylán + matcha + leche + tapioca + popping de mango",
         image: "images/menu-1.webp",
