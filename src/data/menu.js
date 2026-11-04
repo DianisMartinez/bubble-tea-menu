@@ -1,19 +1,5 @@
 export const MENU = [
   {
-    title: "Recomendado de la casa",
-    zh: "招牌",
-    featured: true,
-    items: [
-      {
-        name: "Temuco Special",
-        zh: "招牌特調",
-        desc: "Té de Ceylán + matcha + leche + tapioca + popping de mango",
-        image: "images/menu-1.webp",
-        sizes: [{ size: "700 ml", price: "5.890" }],
-      },
-    ],
-  },
-  {
     title: "Sabores estrella",
     zh: "人氣",
     items: [
