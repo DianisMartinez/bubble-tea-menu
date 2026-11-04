@@ -6,73 +6,43 @@ import "../style/menu.css";
 export default function Menu() {
   const base = import.meta.env.BASE_URL || "/";
 
-  const handleHeroPointer = (event) => {
-    const hero = event.currentTarget;
-    const rect = hero.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    hero.style.setProperty("--hero-x", `${x}px`);
-    hero.style.setProperty("--hero-y", `${y}px`);
-  };
-
-  const handleHeroLeave = (event) => {
-    const hero = event.currentTarget;
-    hero.style.setProperty("--hero-x", "50%");
-    hero.style.setProperty("--hero-y", "40%");
-  };
-
   return (
-    <div className="wrap pageDecor">
-      {/* HERO */}
-      <header className="hero" onPointerMove={handleHeroPointer} onPointerLeave={handleHeroLeave}>
+    <>
+      <header className="hero">
         <BubbleScene />
+        <span className="heroZh" aria-hidden="true">珍珠奶茶</span>
         <div className="heroBody">
-          <img
-            src={`${base}images/logo.png`}
-            alt="Bubble Tea & Coffee logo"
-            className="brandLogoHero"
-            onError={(e) => (e.currentTarget.style.display = "none")}
-          />
-           <div className="taiwanBadge">
-            Inspirado en Taiwan 🇹🇼
-          </div>
-          <p className="subtitle">
-            Bebida Asiatica frutal o leche + bolitas masticables 🧋😍
-          </p>
-
+          <h1 className="heroLogo">
+            <img src={`${base}images/logo.png`} alt="Bubble Tea & Coffee" />
+          </h1>
+          <p className="heroOrigin">Inspirado en Taiwán</p>
+          <p className="heroTagline">Té, leche y perlas de tapioca masticables.</p>
         </div>
+        <svg className="heroWave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 40c120-34 240-34 360 0s240 34 360 0 240-34 360 0 240 34 360 0v30H0z" />
+        </svg>
       </header>
 
-      {/* CATEGORÍAS */}
-      {MENU.map((cat) => (
-        <Category key={cat.title} category={cat} />
-      ))}
+      <main className="wrap">
+        {MENU.map((cat) => (
+          <Category key={cat.title} category={cat} />
+        ))}
+      </main>
 
-      {/* REDES */}
-      <div className="socialBar">
-        <a
-          href="https://www.tiktok.com/@bubbleteaosorno"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="socialItem"
-        > 
-          <i className="fa-brands fa-tiktok"></i>
-          <span>@bubbleteaosorno</span>
-        </a>
-
-        <a
-          href="https://www.instagram.com/bubbleteaosorno"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="socialItem"
-        >
-          <i className="fa-brands fa-instagram"></i>
-          <span>@bubbleteaosorno</span>
-        </a>
-      </div>
       <footer className="footer">
-        Precios sujetos a cambios
+        <div className="social">
+          <a href="https://www.tiktok.com/@bubbleteaosorno" target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-tiktok" aria-hidden="true"></i>
+            <span>TikTok</span>
+          </a>
+          <a href="https://www.instagram.com/bubbleteaosorno" target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+            <span>Instagram</span>
+          </a>
+        </div>
+        <p className="handle">@bubbleteaosorno</p>
+        <p className="note">Precios sujetos a cambios</p>
       </footer>
-    </div>
+    </>
   );
 }

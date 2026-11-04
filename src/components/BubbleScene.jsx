@@ -1,6 +1,14 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
+const PEARL_COUNT = 70;
+const RISING_COUNT = 9;
+// Lente larga: con un ángulo amplio las perlas de los bordes se verían ovaladas.
+const FOV = 12;
+const CAMERA_Z = 70;
+const VIEW_HALF_HEIGHT = Math.tan(THREE.MathUtils.degToRad(FOV / 2)) * CAMERA_Z;
+
+// Perlas de tapioca asentadas en el fondo del vaso; unas pocas suben por el té.
 export default function BubbleScene() {
   const canvasRef = useRef(null);
 
@@ -8,114 +16,99 @@ export default function BubbleScene() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2("#fff0f8", 0.022);
-
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.set(0, 0, 18);
-
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: true,
-    });
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    } catch {
+      return; // Sin WebGL la portada se ve bien igual, solo sin perlas.
+    }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
-    scene.add(ambientLight);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 200);
+    camera.position.set(0, 0, CAMERA_Z);
 
-    const pointLight = new THREE.PointLight(0xffc6d7, 1.2, 80);
-    pointLight.position.set(8, 12, 15);
-    scene.add(pointLight);
+    scene.add(new THREE.AmbientLight(0xfff1dd, 1.1));
+    const light = new THREE.DirectionalLight(0xffffff, 3.2);
+    light.position.set(-5, 9, 12);
+    scene.add(light);
 
-    const bubbles = new THREE.Group();
-    const bubbleGeometry = new THREE.SphereGeometry(1, 24, 24);
+    const geometry = new THREE.SphereGeometry(1, 32, 24);
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x24120b,
+      roughness: 0.2,
+      metalness: 0.05,
+    });
 
-    for (let i = 0; i < 18; i += 1) {
-      const bubbleMaterial = new THREE.MeshPhysicalMaterial({
-        color: 0xf7d1e4,
-        transparent: true,
-        opacity: 0.42,
-        roughness: 0.16,
-        metalness: 0.1,
-        transmission: 0.85,
-        clearcoat: 0.8,
-        clearcoatRoughness: 0.2,
-      });
-
-      const bubble = new THREE.Mesh(bubbleGeometry, bubbleMaterial);
-      bubble.position.set(
-        (Math.random() - 0.5) * 14,
-        (Math.random() - 0.5) * 8,
-        (Math.random() - 0.5) * 6
-      );
-      const scale = 0.8 + Math.random() * 1.4;
-      bubble.scale.setScalar(scale);
-      bubble.userData.speed = 0.0025 + Math.random() * 0.01;
-      bubble.userData.phase = Math.random() * Math.PI * 2;
-      bubbles.add(bubble);
+    const pearls = [];
+    for (let i = 0; i < PEARL_COUNT + RISING_COUNT; i += 1) {
+      const pearl = new THREE.Mesh(geometry, material);
+      const rising = i >= PEARL_COUNT;
+      pearl.scale.setScalar(0.5 + Math.random() * 0.2);
+      pearl.userData = {
+        rising,
+        u: Math.random() * 2 - 1,
+        y: rising ? -7 + Math.random() * 4 : -7.2 + Math.random() ** 1.8 * 3,
+        z: (Math.random() - 0.5) * 3,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.004 + Math.random() * 0.006,
+      };
+      pearl.position.y = pearl.userData.y;
+      pearl.position.z = pearl.userData.z;
+      scene.add(pearl);
+      pearls.push(pearl);
     }
 
-    scene.add(bubbles);
-
-    let pointer = { x: 0, y: 0 };
-    const handlePointerMove = (event) => {
-      const { innerWidth, innerHeight } = window;
-      pointer.x = (event.clientX / innerWidth - 0.5) * 2;
-      pointer.y = (event.clientY / innerHeight - 0.5) * 2;
-    };
-    window.addEventListener("pointermove", handlePointerMove);
-
+    let halfWidth = 10;
     const handleResize = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
+      if (!width || !height) return;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(width, height, true);
+      renderer.setSize(width, height, false);
+      halfWidth = VIEW_HALF_HEIGHT * camera.aspect;
+    };
+    handleResize();
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(canvas);
+
+    const clock = new THREE.Clock();
+    let frameId = null;
+
+    const draw = () => {
+      const t = clock.getElapsedTime();
+      pearls.forEach((pearl) => {
+        const d = pearl.userData;
+        if (d.rising) {
+          d.y += d.speed;
+          if (d.y > -1.6) d.y = -7;
+        }
+        pearl.position.x = d.u * halfWidth + Math.sin(t * 0.5 + d.phase) * 0.12;
+        pearl.position.y = d.y + Math.sin(t * 0.8 + d.phase) * 0.07;
+      });
+      renderer.render(scene, camera);
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    let frameId = null;
-    const clock = new THREE.Clock();
-
     const animate = () => {
-      const elapsed = clock.getElapsedTime();
-      bubbles.children.forEach((bubble, index) => {
-        bubble.position.y += bubble.userData.speed;
-        bubble.rotation.x += 0.0015 + index * 0.0002;
-        bubble.rotation.y += 0.002 + index * 0.0001;
-        bubble.position.x += Math.sin(elapsed + bubble.userData.phase) * 0.0012;
-        if (bubble.position.y > 8.5) bubble.position.y = -8.5;
-      });
-
-      bubbles.rotation.y += (pointer.x * 0.14 - bubbles.rotation.y) * 0.06;
-      bubbles.rotation.x += (pointer.y * 0.1 - bubbles.rotation.x) * 0.06;
-
-      renderer.render(scene, camera);
+      draw();
       frameId = requestAnimationFrame(animate);
     };
 
-    animate();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      draw();
+    } else {
+      animate();
+    }
 
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("pointermove", handlePointerMove);
+      resizeObserver.disconnect();
+      geometry.dispose();
+      material.dispose();
       renderer.dispose();
-      scene.traverse((object) => {
-        if (object.geometry) object.geometry.dispose();
-        if (object.material) {
-          if (Array.isArray(object.material)) {
-            object.material.forEach((material) => material.dispose());
-          } else {
-            object.material.dispose();
-          }
-        }
-      });
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="bubbleCanvas" />;
+  return <canvas ref={canvasRef} className="bubbleCanvas" aria-hidden="true" />;
 }
